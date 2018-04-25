@@ -13,6 +13,17 @@ module.exports = {
             'node_modules'
         ]
     },
+    optimization: {
+        splitChunks: {
+            cacheGroups: {
+                commons: {
+                    test: /[\\/]node_modules[\\/]/,
+                    name: 'vendor',
+                    chunks: 'all'
+                }
+            }
+        }
+    },
     module: {
         rules: [
             { test: /\.tsx?$/, loader: "ts-loader" }
