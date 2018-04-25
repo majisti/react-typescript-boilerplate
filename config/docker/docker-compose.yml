@@ -1,0 +1,16 @@
+version: '3'
+
+services:
+  yarn:
+    image: 'node:9.11.1'
+    volumes:
+      - ../../:/app
+    working_dir: /app
+    entrypoint: yarn
+
+  webpack:
+    image: 'node:9.11.1'
+    volumes:
+      - ../../:/app
+    working_dir: /app
+    entrypoint: node ./node_modules/.bin/webpack-cli
